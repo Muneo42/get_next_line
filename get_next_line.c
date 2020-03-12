@@ -6,13 +6,13 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:42 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/11 19:39:54 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 14:41:13 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *p, int c)
+char		*ft_strchr(const char *p, int c)
 {
 	char	*temp;
 
@@ -28,7 +28,7 @@ char	*ft_strchr(const char *p, int c)
 	return (0);
 }
 
-char	*ft_strnew(size_t size)
+char		*ft_strnew(size_t size)
 {
 	size_t	i;
 	char	*str;
@@ -61,8 +61,7 @@ static int	ft_new_line(char **s, char **line, int fd, int ret)
 			return (-1);
 		free(s[fd]);
 		s[fd] = temp;
-		if (s[fd][0] == '\0')
-			ft_strdel(&s[fd]);
+		(s[fd][0] == '\0') ? ft_strdel(&s[fd]) : 0;
 	}
 	else if (s[fd][len] == '\0')
 	{
@@ -75,16 +74,16 @@ static int	ft_new_line(char **s, char **line, int fd, int ret)
 	return (1);
 }
 
-void			ft_malloc(char **line)
+void		ft_malloc(char **line)
 {
 	if (!(*line = malloc(sizeof(char))))
-			exit(0);
+		exit(0);
 	(*line)[0] = 0;
 }
 
 int			get_next_line(int fd, char **line)
 {
-	int		verif;
+	int			verif;
 	char		buffer[BUFFER_SIZE + 1];
 	char		*temp;
 	static char	*str[4096];
@@ -94,18 +93,17 @@ int			get_next_line(int fd, char **line)
 	while ((verif = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
 		buffer[verif] = '\0';
-		if (str[fd] == NULL)
-			str[fd] = ft_strnew(1);
+		(str[fd] == NULL) ? str[fd] = ft_strnew(1) : str[fd];
 		temp = ft_strjoin(str[fd], buffer);
 		free(str[fd]);
 		str[fd] = temp;
 		if (ft_strchr(buffer, '\n'))
 			break ;
-	}	
+	}
 	if (verif < 0)
 		return (-1);
 	if (verif == 0 && (str[fd] == 0 || str[fd][0] == '\0'))
-	{	
+	{
 		ft_malloc(line);
 		return (0);
 	}

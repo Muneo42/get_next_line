@@ -6,11 +6,11 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:33 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/11 19:39:41 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 14:42:45 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {

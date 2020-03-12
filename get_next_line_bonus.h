@@ -6,12 +6,12 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 23:39:14 by jopaning          #+#    #+#             */
-/*   Updated: 2020/01/18 23:39:17 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 14:42:34 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -24,5 +24,6 @@ char	*ft_strdup(const char *str);
 void	ft_strdel(char **as);
 char	*ft_strchr(const char *p, int c);
 char	*ft_strnew(size_t size);
+void	ft_malloc(char **line);
 
 #endif
