@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:42 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/12 14:42:00 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 14:51:26 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	ft_new_line(char **s, char **line, int fd, int ret)
 	return (1);
 }
 
-void		ft_malloc(char **line)
+int			ft_malloc(char **line)
 {
 	if (!(*line = malloc(sizeof(char))))
 		exit(0);
@@ -103,9 +103,6 @@ int			get_next_line(int fd, char **line)
 	if (verif < 0)
 		return (-1);
 	if (verif == 0 && (str[fd] == 0 || str[fd][0] == '\0'))
-	{
-		ft_malloc(line);
-		return (0);
-	}
+		return (ft_malloc(line));
 	return (ft_new_line(str, line, fd, verif));
 }

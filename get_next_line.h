@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:51 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/12 14:21:52 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 14:50:36 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strdup(const char *str);
 void	ft_strdel(char **as);
 char	*ft_strchr(const char *p, int c);
 char	*ft_strnew(size_t size);
-void	ft_malloc(char **line);
+int		ft_malloc(char **line);
 
 #endif
