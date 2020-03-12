@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:51 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/12 14:50:36 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 15:03:33 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int     get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
