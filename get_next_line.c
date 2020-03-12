@@ -6,7 +6,7 @@
 /*   By: jopaning <jopaning@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:16:42 by jopaning          #+#    #+#             */
-/*   Updated: 2020/03/12 14:50:47 by jopaning         ###   ########.fr       */
+/*   Updated: 2020/03/12 16:12:27 by jopaning         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ static int	ft_new_line(char **s, char **line, int fd, int ret)
 int			ft_malloc(char **line)
 {
 	if (!(*line = malloc(sizeof(char))))
-		exit(0);
+		return(-1);
 	(*line)[0] = 0;
+	return(0);
 }
 
 int			get_next_line(int fd, char **line)
